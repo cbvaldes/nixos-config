@@ -10,6 +10,7 @@
 
 			init = { defaultBranch = "main"; };
 			core = { autocrlf = false; };
+			safe = { directory = "~/nixos-config"; };
 		};
 	};
 }
