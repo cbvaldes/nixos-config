@@ -7,9 +7,12 @@
 				name = "Camilo Bravo Valdés";
 				email = "/dev/null";
 			};
+			core = {
+				autocrlf = false;
+				editor = "nvim";
+			};
 
 			init = { defaultBranch = "main"; };
-			core = { autocrlf = false; };
 			safe = { directory = "${config.home.homeDirectory}/nixos-config"; };
 		};
 	};
