@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
 	programs.git = {
 		enable = true;
@@ -10,7 +10,7 @@
 
 			init = { defaultBranch = "main"; };
 			core = { autocrlf = false; };
-			safe = { directory = "~/nixos-config"; };
+			safe = { directory = "${config.home.homeDirectory}/nixos-config"; };
 		};
 	};
 }
