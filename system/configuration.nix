@@ -86,8 +86,9 @@
 				"--unsetenv XDG_STATE_HOME"
 			];
 
-			extraPkgs = pkgs: [ pkgs.mangohud ];
-			extraEnv = { MANGOHUD = true; };
+			# Disable MangoHUD for now...
+			# extraPkgs = pkgs: [ pkgs.mangohud ];
+			# extraEnv = { MANGOHUD = true; };
 		};
 	};
 
