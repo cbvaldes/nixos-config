@@ -24,6 +24,7 @@
 
 		initExtra = ''
 			export PS1='┏ (\u@\h)-[\w]\n┗ $ '
+			alias ls='ls --color=auto --group-directories-first'
 		'';
 	};
 }
