@@ -1,0 +1,29 @@
+A simple plugin that allows describing a project, which is a set of files that
+can be easily loaded into the editor "at once", as opposed to having to open
+each file separately.
+
+The plugin registers a normal-mode keybind, `<leader>lp`, which will "load"
+the project. This requires the existence of a file named `.project.lua` in the
+current working directory.
+
+An example of the contents of this file would be something like this:
+
+	require('cproject').setup {
+		exclude = { '.git', '.gitignore' }
+	}
+
+When the project is "loaded", all the files under the current working directory
+will be loaded into the editor. Any files that match either `.git` or `.gitinore`
+will be excluded. In the case of the first entry, since it represents a directory,
+it will also cause the files contained in it to be excluded as well.
+
+The plugin supports specifying a function that will be called for each file that
+is "loaded" into the editor. This function is called when the current active
+buffer is the file that was just "loaded", so it allows to set buffer-local
+options.
+
+	require('cproject').setup {
+		for_each_file = function()
+			vim.cmd.setlocal('spell spelllang=en_us')
+		end
+	}
